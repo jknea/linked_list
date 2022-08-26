@@ -151,9 +151,9 @@ int main(){
     printf("\n");
 
     printf("Testing HAS CYCLE\n");
-    node_t *cycle = malloc(sizeof(node_t));
+    node_t *cycle = new node_t;
     cycle->val = 10;
-    node_t *cycle2 = malloc(sizeof(node_t));
+    node_t *cycle2 = new node_t;
     cycle->next = cycle2;
     cycle2->val = 22;
     cycle2->next = cycle;
@@ -166,8 +166,8 @@ int main(){
     (cyc) ? printf("\t\tHas Cycle\n") : printf("\t\tNo Cycle\n");
     printf("\t\t...success\n");
 
-    free(cycle);
-    free(cycle2);
+    delete cycle;
+    delete cycle2;
     delete_list(&head);
     delete_list(&head1);
     return 0;
